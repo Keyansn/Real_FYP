@@ -1,0 +1,64 @@
+<nodes>
+  <node>
+    <name> Ted </name>
+    <ID> 1 </ID>
+    <data> Alive </data>
+  </node>
+
+  <node>
+    <name> Marshall </name>
+    <ID> 2 </ID>
+    <data> Dead </data>
+  </node>
+
+  <node>
+    <name> Lily </name>
+    <ID> 3 </ID>
+    <data> Dead </data>
+  </node>
+
+  <node>
+    <name> Barney </name>
+    <ID> 4 </ID>
+    <data> Dead </data>
+  </node>
+
+  <node>
+    <name> Robin </name>
+    <ID> 5 </ID>
+    <data> Alive </data>
+  </node>
+  
+  
+
+  <link>
+    <source> Ted </source>
+    <target> Marshall </target>
+    <direction> False </direction>
+  </link>
+
+  <link>
+    <source> Ted </source>
+    <target> Lily </target>
+    <direction> True </direction>
+  </link>
+
+  <link>
+    <source> Lily </source>
+    <target> Marshall </target>
+    <direction> False </direction>
+  </link>
+
+  <link>
+    <source> Ted </source>
+    <target> Barney </target>
+    <direction> True </direction>
+  </link>
+
+  <link>
+    <source> Ted </source>
+    <target> Robin </target>
+    <direction> True </direction>
+  </link>
+
+</nodes>
