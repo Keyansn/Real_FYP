@@ -1,8 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\XmlSave.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ButtonExample.cs">
     <Files>
-      <File FileName="Assets\Scripts\XmlSave.cs" Line="29" Column="6" />
+      <File FileName="Assets\Scripts\XmlSave.cs" Line="35" Column="51" />
+      <File FileName="Assets\Scripts\ColorSpheres.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\InputFile.cs" Line="28" Column="42" />
+      <File FileName="Assets\Scripts\Link.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ButtonColor.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ButtonExample.cs" Line="37" Column="59" />
+      <File FileName="Assets\Scripts\ButtonLines.cs" Line="30" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

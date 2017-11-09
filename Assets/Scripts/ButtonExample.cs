@@ -6,11 +6,16 @@ using System.Collections;
 public class ButtonExample : MonoBehaviour
 {
     public Button yourButton;
+	public Text txt;
+	GameObject[] nodelist;
+	int node_length;
 
     void Start()
     {
         Button btn = yourButton.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
+		CountNodes ();
+
     }
 
     void TaskOnClick()
@@ -21,5 +26,15 @@ public class ButtonExample : MonoBehaviour
 
         //Move the new cloned prefab to random location 
         clone.transform.position = new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f));
+		CountNodes ();
     }
+
+	void CountNodes()
+	{
+		nodelist = GameObject.FindGameObjectsWithTag("Node");
+		node_length = nodelist.Length;
+
+		txt.text = "Number of nodes: " + node_length.ToString();
+	}
+
 }

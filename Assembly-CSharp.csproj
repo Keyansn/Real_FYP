@@ -65,10 +65,14 @@
      <Compile Include="Assets\Scripts\SetText.cs" />
      <Compile Include="Assets\Scripts\SpawnNodes.cs" />
      <Compile Include="Assets\Scripts\XmlSave.cs" />
+     <None Include="Assets\StreamingAssets\XML\save_data2.xml" />
+     <None Include="Assets\StreamingAssets\XML\save.xml" />
      <None Include="Assets\Data\test.xml" />
      <None Include="Assets\StreamingAssets\XML\item_data2.xml" />
+     <None Include="Assets\StreamingAssets\XML\save_data_test.xml" />
      <None Include="Assets\Data\Links.xml" />
      <None Include="Assets\StreamingAssets\XML\item_data.xml" />
+     <None Include="Assets\StreamingAssets\XML\save_data.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

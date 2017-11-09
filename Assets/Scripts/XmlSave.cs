@@ -18,7 +18,7 @@ public class XmlSave : MonoBehaviour
     //public List <node> temp= new List<node>();
     public ItemDB itemDB;
     //public node temp = new node();
-    
+	public string Filename = "save_data";
     
     //List<node> temp = new List<node>;
     
@@ -39,6 +39,7 @@ public class XmlSave : MonoBehaviour
 
     public void SaveItems()
     {
+		itemDB.nodes.Clear();
         nodelist = GameObject.FindGameObjectsWithTag("Node");
         node_length = nodelist.Length;
 
@@ -73,9 +74,11 @@ public class XmlSave : MonoBehaviour
 
         //Create new xml file
         XmlSerializer serializer = new XmlSerializer(typeof(ItemDB));
-        FileStream stream = new FileStream(Application.dataPath + "/StreamingAssets/XML/item_data2.xml", FileMode.Create);
+		FileStream stream = new FileStream(Application.dataPath + "/StreamingAssets/XML/" + Filename + ".xml", FileMode.Create);
         serializer.Serialize(stream, itemDB);
         stream.Close();
+
+
     }
 
 }

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<ItemDB xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <nodes>
+    <node>
+      <name> Ted </name>
+      <ID>1</ID>
+      <Data>Data</Data>
+      <loc>
+        <x>3.20232153</x>
+        <y>5.81644773</y>
+        <z>9.565708</z>
+      </loc>
+    </node>
+    <node>
+      <name> Marshall </name>
+      <ID>1</ID>
+      <Data>Data</Data>
+      <loc>
+        <x>7.198787</x>
+        <y>-6.535055</y>
+        <z>3.11962581</z>
+      </loc>
+    </node>
+    <node>
+      <name> Lily </name>
+      <ID>1</ID>
+      <Data>Data</Data>
+      <loc>
+        <x>9.427759</x>
+        <y>-1.20823</y>
+        <z>6.359665</z>
+      </loc>
+    </node>
+    <node>
+      <name> Barney </name>
+      <ID>1</ID>
+      <Data>Data</Data>
+      <loc>
+        <x>5.01981926</x>
+        <y>-4.73444557</y>
+        <z>-2.88126564</z>
+      </loc>
+    </node>
+    <node>
+      <name> Robin </name>
+      <ID>1</ID>
+      <Data>Data</Data>
+      <loc>
+        <x>6.42626</x>
+        <y>-5.353675</y>
+        <z>-2.253646</z>
+      </loc>
+    </node>
+    <node>
+      <name> Ted </name>
+      <ID>1</ID>
+      <Data>Data</Data>
+      <loc>
+        <x>3.20232153</x>
+        <y>5.81644773</y>
+        <z>9.565708</z>
+      </loc>
+    </node>
+    <node>
+      <name> Marshall </name>
+      <ID>1</ID>
+      <Data>Data</Data>
+      <loc>
+        <x>7.198787</x>
+        <y>-6.535055</y>
+        <z>3.11962581</z>
+      </loc>
+    </node>
+    <node>
+      <name> Lily </name>
+      <ID>1</ID>
+      <Data>Data</Data>
+      <loc>
+        <x>9.427759</x>
+        <y>-1.20823</y>
+        <z>6.359665</z>
+      </loc>
+    </node>
+    <node>
+      <name> Barney </name>
+      <ID>1</ID>
+      <Data>Data</Data>
+      <loc>
+        <x>5.01981926</x>
+        <y>-4.73444557</y>
+        <z>-2.88126564</z>
+      </loc>
+    </node>
+    <node>
+      <name> Robin </name>
+      <ID>1</ID>
+      <Data>Data</Data>
+      <loc>
+        <x>6.42626</x>
+        <y>-5.353675</y>
+        <z>-2.253646</z>
+      </loc>
+    </node>
+  </nodes>
+</ItemDB>
