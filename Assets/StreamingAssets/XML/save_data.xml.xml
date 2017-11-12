@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<ItemDB xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <nodes>
+    <node>
+      <name> Ted </name>
+      <ID>1</ID>
+      <Data>Data</Data>
+      <loc>
+        <x>3.77151251</x>
+        <y>-7.718046</y>
+        <z>5.9572525</z>
+      </loc>
+    </node>
+    <node>
+      <name> Marshall </name>
+      <ID>1</ID>
+      <Data>Data</Data>
+      <loc>
+        <x>-0.601882</x>
+        <y>-1.6169796</y>
+        <z>0.3835287</z>
+      </loc>
+    </node>
+    <node>
+      <name> Lily </name>
+      <ID>1</ID>
+      <Data>Data</Data>
+      <loc>
+        <x>-3.70263</x>
+        <y>-6.264736</y>
+        <z>-0.136610031</z>
+      </loc>
+    </node>
+    <node>
+      <name> Barney </name>
+      <ID>1</ID>
+      <Data>Data</Data>
+      <loc>
+        <x>6.065061</x>
+        <y>0.6462965</y>
+        <z>4.08443451</z>
+      </loc>
+    </node>
+    <node>
+      <name> Robin </name>
+      <ID>1</ID>
+      <Data>Data</Data>
+      <loc>
+        <x>-0.426925659</x>
+        <y>8.05628</y>
+        <z>9.815235</z>
+      </loc>
+    </node>
+    <node>
+      <name>Node1(Clone)</name>
+      <ID>1</ID>
+      <Data>Data</Data>
+      <loc>
+        <x>-4.562999</x>
+        <y>0.030046463</y>
+        <z>6.70826674</z>
+      </loc>
+    </node>
+    <node>
+      <name>Node1(Clone)</name>
+      <ID>1</ID>
+      <Data>Data</Data>
+      <loc>
+        <x>-8.603844</x>
+        <y>-5.91840744</y>
+        <z>2.522411</z>
+      </loc>
+    </node>
+    <node>
+      <name>Node1(Clone)</name>
+      <ID>1</ID>
+      <Data>Data</Data>
+      <loc>
+        <x>-6.202305</x>
+        <y>-6.829334</y>
+        <z>2.698879</z>
+      </loc>
+    </node>
+  </nodes>
+</ItemDB>

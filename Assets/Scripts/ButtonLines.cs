@@ -6,6 +6,8 @@ using System.Collections;
 public class ButtonLines : MonoBehaviour
 {
     public Button yourButton;
+	public Text txtlinks;
+	public double Percent_without_direction;
     GameObject[] nodelist;
     GameObject[] linklist;
     int node_length, link_length;
@@ -14,8 +16,10 @@ public class ButtonLines : MonoBehaviour
 
     void Start()
     {
+		Percent_without_direction = 0.5;
         Button btn = yourButton.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
+		CountLines ();
     }
 
     void TaskOnClick()
@@ -67,7 +71,28 @@ public class ButtonLines : MonoBehaviour
             GameObject clone = Instantiate(prefab, Vector3.zero, Quaternion.identity) as GameObject;
             clone.GetComponent<Link>().source = nodelist[num1];
             clone.GetComponent<Link>().target = nodelist[num2];
+			clone.GetComponent<Link>().direction = randomBoolean();
+
          }
 
+		CountLines ();
+
     }
+
+	public void CountLines()
+	{
+		linklist = GameObject.FindGameObjectsWithTag("link");
+		link_length = linklist.Length;
+
+		txtlinks.text = "Number of links: " + link_length.ToString();
+	}
+
+	private bool randomBoolean ()
+	{
+		if (Random.value >= Percent_without_direction)
+		{
+			return true;
+		}
+		return false;
+	}
 }

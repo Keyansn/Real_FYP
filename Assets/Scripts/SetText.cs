@@ -9,6 +9,9 @@ public class SetText : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		//name = GetComponentsInParent<name> ();
+
+		name = transform.parent.name;
         GetComponent<TextMesh>().text = name;
     }
 	
