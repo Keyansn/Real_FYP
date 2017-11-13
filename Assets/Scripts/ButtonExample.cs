@@ -9,7 +9,7 @@ public class ButtonExample : MonoBehaviour
 	public Text txtnodes;
 	GameObject[] nodelist;
 	int node_length;
-	//string nodeName;
+
 
 
     void Start()
@@ -42,8 +42,11 @@ public class ButtonExample : MonoBehaviour
 		node_length = nodelist.Length;
 
 		txtnodes.text = "Number of nodes: " + node_length.ToString();
+
+
 	}
 
+	//Returns random name from long array of names 
 	private string NameGen()
 	{
 		string[] names = new string[] 

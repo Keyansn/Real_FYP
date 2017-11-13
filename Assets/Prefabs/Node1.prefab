@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 114929528056922158}
   m_Layer: 0
   m_Name: New Text
-  m_TagString: Untagged
+  m_TagString: Not_Highlighted
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -194,6 +194,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: e1733da51318a304486325d6160413b1, type: 2}
   - {fileID: 2100000, guid: ada1732e7f6423a48a2c4bc0b4aa4d7d, type: 2}
   Rend: {fileID: 0}
+  txthighlighted: {fileID: 0}
   id: 
   nodeText: {fileID: 102140720483196486}
 --- !u!114 &114929528056922158

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class ColorSpheres : MonoBehaviour {
 
@@ -9,6 +11,9 @@ public class ColorSpheres : MonoBehaviour {
     public Renderer Rend; //What are we rendering? Input object(Sphere,Cylinder,...) to render.
     GameObject[] nodelist;
     int node_length;
+	//public Text txthighlighted;
+	//GameObject[] highlightedlist;
+	//int highlighted_length;
 
     private int index = 1;//Initialize at 1, otherwise you have to press the ball twice to change colors at first.
 
@@ -52,6 +57,15 @@ public class ColorSpheres : MonoBehaviour {
 
             Rend.sharedMaterial = materials[index - 1]; //This sets the material color values inside the index
 
+			if (index == 2) {
+				transform.GetChild(0).tag = "Highlighted";
+			}
+			else{
+				transform.GetChild(0).tag = "Not_Highlighted";
+			}
+
+			//CountHighlightedNodes();
+			/*
             nodelist = GameObject.FindGameObjectsWithTag("Node");
             node_length = nodelist.Length;
 
@@ -60,7 +74,7 @@ public class ColorSpheres : MonoBehaviour {
                 Debug.Log(GameObject.FindGameObjectsWithTag("Node")[i].transform.position);
             }
 
-            
+            */
 
 
             /*
@@ -85,5 +99,15 @@ public class ColorSpheres : MonoBehaviour {
         
 
     }
+	/*
+	public void CountHighlightedNodes(){
+		highlightedlist = GameObject.FindGameObjectsWithTag("Highlighted");
+		highlighted_length = highlightedlist.Length;
+		txthighlighted.text = "Number of highlighted: " + highlighted_length.ToString();
+	}*/
+
+
+
+
     }
 

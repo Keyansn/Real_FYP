@@ -4,13 +4,23 @@ using UnityEngine;
 using UnityEditor;
 using System.IO;
 using System.Xml;
+using NUnit.Framework.Interfaces;
 
 public class InputFile : MonoBehaviour
 {
     //the xml file attached
     public TextAsset xmlRawFile;
 
-    void Start ()
+	/*
+	 * Important:
+	 * InputFile.cs uses void Awake instead of void Start
+	 * Unity order of implementation:
+	 * 		Awake -> Start -> Update
+	 * 
+	 * Therefore, Awake needs to be called to ensure nodes and lines counted correctly initially
+	 * */
+
+    void Awake ()
     {
         string data = xmlRawFile.text;
         LoadInputFile(data);
@@ -99,5 +109,7 @@ public class InputFile : MonoBehaviour
 
 
     }
+
+
 
 }
