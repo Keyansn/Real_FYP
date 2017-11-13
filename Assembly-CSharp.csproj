@@ -51,7 +51,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\ButtonColor.cs" />
      <Compile Include="Assets\Scripts\ButtonExample.cs" />
      <Compile Include="Assets\Scripts\ButtonLines.cs" />
      <Compile Include="Assets\Scripts\CameraControlZeroG.cs" />
@@ -65,6 +64,7 @@
      <Compile Include="Assets\Scripts\SetText.cs" />
      <Compile Include="Assets\Scripts\SpawnNodes.cs" />
      <Compile Include="Assets\Scripts\XmlSave.cs" />
+     <None Include="Assets\Data\newFormat.xml.xml" />
      <None Include="Assets\StreamingAssets\XML\save_data2.xml" />
      <None Include="Assets\LICENSE.txt" />
      <None Include="Assets\StreamingAssets\XML\save.xml" />
@@ -73,8 +73,8 @@
      <None Include="Assets\StreamingAssets\XML\save_data_test.xml" />
      <None Include="Assets\Data\Links.xml" />
      <None Include="Assets\StreamingAssets\XML\item_data.xml" />
-     <None Include="Assets\StreamingAssets\XML\save_data.xml.xml" />
-     <None Include="Assets\StreamingAssets\XML\save_data.xml" />
+     <None Include="Assets\Data\save_data.xml.xml" />
+     <None Include="Assets\Data\save_data.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

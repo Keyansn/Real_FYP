@@ -1,6 +1,15 @@
-<links>
+<nodes>
+  <node>
+    <name> Ted </name>
+    <ID> 1 </ID>
+    <name_data1> Status </name_data1>
+    <data1> Alive </data1>
+
+  </node>
+
   <link>
-    <source> Node 1 </source>
-    <target> Node 2 </target>
+    <source> Ted </source>
+    <target> Marshall </target>
+    <direction> False </direction>
   </link>
-</links>
+</nodes>

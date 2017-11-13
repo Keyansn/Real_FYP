@@ -33,7 +33,7 @@ public class InputFile : MonoBehaviour
         xmlDoc.Load(new StringReader(xmlFile));
 
         //Go through the node section of the Links.xml file
-        string xmlPathNodes = "//nodes/node";
+        string xmlPathNodes = "//ItemDB/nodes/node";
         XmlNodeList nodeList = xmlDoc.SelectNodes (xmlPathNodes);
         foreach(XmlNode node in nodeList)
         {
@@ -44,13 +44,22 @@ public class InputFile : MonoBehaviour
             XmlNode _name = node.FirstChild;
             XmlNode id= _name.NextSibling;
             XmlNode data = id.NextSibling;
+			XmlNode x = data.NextSibling;
+			XmlNode y = x.NextSibling;
+			XmlNode z = y.NextSibling;
 
             //Create nodes from the prefab
             Object prefab = AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Node1.prefab", typeof(GameObject));
             GameObject clone = Instantiate(prefab, Vector3.zero, Quaternion.identity) as GameObject;
 
-            //Move the new cloned prefab to random location 
-            clone.transform.position = new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f));
+            //Move the new cloned prefab to random location
+			if (x.InnerXml == "" || y.InnerXml == "" || z.InnerXml == "") {
+				clone.transform.position = new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f));
+			}
+			else{
+				clone.transform.position = new Vector3(float.Parse(x.InnerXml), float.Parse(y.InnerXml), float.Parse(z.InnerXml));
+			}
+            
 
             //Name the cloned prefab (for hierarchy view)
             clone.name = _name.InnerXml;
@@ -65,7 +74,7 @@ public class InputFile : MonoBehaviour
 
 
         //Go through the link section of the Links.xml file
-        string xmlPathLinks = "//nodes/link";
+		string xmlPathLinks = "//ItemDB/links/link";
         XmlNodeList nodeListLinks = xmlDoc.SelectNodes(xmlPathLinks);
         foreach (XmlNode node in nodeListLinks)
         {
@@ -88,7 +97,7 @@ public class InputFile : MonoBehaviour
             clone.GetComponent<Link>().target = GameObject.Find(_target.InnerXml);
 
             //Checks if link has a direction asssigned to it
-            if (_direction.InnerXml == " True ")
+            if (_direction.InnerXml == "True")
             {
                 clone.GetComponent<Link>().direction = true;
             }

@@ -5,51 +5,51 @@
       <name> Ted </name>
       <ID>1</ID>
       <Data>Data</Data>
-      <loc>
+
         <x>-9.074509</x>
         <y>-5.400362</y>
         <z>-4.9264946</z>
-      </loc>
+      
     </node>
     <node>
       <name> Marshall </name>
       <ID>1</ID>
       <Data>Data</Data>
-      <loc>
+
         <x>-0.5744591</x>
         <y>-3.1528244</y>
         <z>8.322086</z>
-      </loc>
+      
     </node>
     <node>
       <name> Lily </name>
       <ID>1</ID>
       <Data>Data</Data>
-      <loc>
+
         <x>8.93339348</x>
         <y>7.136566</y>
         <z>-3.8954792</z>
-      </loc>
+      
     </node>
     <node>
       <name> Barney </name>
       <ID>1</ID>
       <Data>Data</Data>
-      <loc>
+
         <x>-9.906818</x>
         <y>3.119566</y>
         <z>-8.494709</z>
-      </loc>
+      
     </node>
     <node>
       <name> Robin </name>
       <ID>1</ID>
       <Data>Data</Data>
-      <loc>
+
         <x>3.69857764</x>
         <y>-5.042589</y>
         <z>-3.13277626</z>
-      </loc>
+      
     </node>
   </nodes>
 </ItemDB>
