@@ -67,10 +67,12 @@
      <None Include="Assets\Data\newFormat.xml.xml" />
      <None Include="Assets\StreamingAssets\XML\save_data2.xml" />
      <None Include="Assets\LICENSE.txt" />
+     <None Include="Assets\StreamingAssets\XML\save_vulps.xml" />
      <None Include="Assets\StreamingAssets\XML\save.xml" />
      <None Include="Assets\Data\test.xml" />
      <None Include="Assets\StreamingAssets\XML\item_data2.xml" />
      <None Include="Assets\StreamingAssets\XML\save_data_test.xml" />
+     <None Include="Assets\Data\Vulps.xml" />
      <None Include="Assets\Data\Links.xml" />
      <None Include="Assets\StreamingAssets\XML\item_data.xml" />
      <None Include="Assets\Data\save_data.xml.xml" />

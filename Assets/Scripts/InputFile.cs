@@ -10,6 +10,7 @@ public class InputFile : MonoBehaviour
 {
     //the xml file attached
     public TextAsset xmlRawFile;
+	private float scalesize = 50;
 
 	/*
 	 * Important:
@@ -54,7 +55,7 @@ public class InputFile : MonoBehaviour
 
             //Move the new cloned prefab to random location
 			if (x.InnerXml == "" || y.InnerXml == "" || z.InnerXml == "") {
-				clone.transform.position = new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f));
+				clone.transform.position = new Vector3(Random.Range(-scalesize, scalesize), Random.Range(-scalesize, scalesize), Random.Range(-scalesize, scalesize));
 			}
 			else{
 				clone.transform.position = new Vector3(float.Parse(x.InnerXml), float.Parse(y.InnerXml), float.Parse(z.InnerXml));
