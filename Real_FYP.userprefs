@@ -1,19 +1,20 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\InputFile.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EigenvectorCentrality.cs">
     <Files>
-      <File FileName="Assets\Scripts\XmlSave.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ColorSpheres.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ButtonExample.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\InputFile.cs" Line="13" Column="29" />
-      <File FileName="Assets\Scripts\Link.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ButtonLines.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\XmlSave.cs" Line="94" Column="1" />
+      <File FileName="Assets\Scripts\ColorSpheres.cs" Line="13" Column="21" />
+      <File FileName="Assets\Scripts\ButtonExample.cs" Line="41" Column="3" />
+      <File FileName="Assets\Scripts\InputFile.cs" Line="26" Column="32" />
+      <File FileName="Assets\Scripts\Link.cs" Line="11" Column="27" />
+      <File FileName="Assets\Scripts\ButtonLines.cs" Line="33" Column="48" />
       <File FileName="Assets\Scripts\SetText.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\MouseLook.cs" Line="1" Column="1" />
-      <File FileName="Assets\Data\Links.xml" Line="1" Column="1" />
+      <File FileName="Assets\Data\Links.xml" Line="33" Column="25" />
       <File FileName="Assets\Data\test.xml" Line="1" Column="1" />
       <File FileName="Assets\Data\save_data.xml.xml" Line="1" Column="1" />
       <File FileName="Assets\Data\Vulps.xml" Line="1660" Column="29" />
+      <File FileName="Assets\Scripts\EigenvectorCentrality.cs" Line="70" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

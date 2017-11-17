@@ -50,31 +50,31 @@
 	  <link>
 	    <source> Ted </source>
 	    <target> Marshall </target>
-	    <direction> False </direction>
+	    <direction>False</direction>
 	  </link>
 
 	  <link>
 	    <source> Ted </source>
 	    <target> Lily </target>
-	    <direction> True </direction>
+	    <direction>False</direction>
 	  </link>
 
 	  <link>
 	    <source> Lily </source>
 	    <target> Marshall </target>
-	    <direction> False </direction>
+	    <direction>False</direction>
 	  </link>
 
 	  <link>
 	    <source> Ted </source>
 	    <target> Barney </target>
-	    <direction> True </direction>
+	    <direction>False</direction>
 	  </link>
 
 	  <link>
 	    <source> Ted </source>
 	    <target> Robin </target>
-	    <direction> True </direction>
+	    <direction>False</direction>
 	  </link>
 
 	</nodes>
