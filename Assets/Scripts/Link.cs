@@ -60,7 +60,9 @@ public class Link : MonoBehaviour
 		//GlobalScalers Script = GetComponent<GlobalScalers>();
 		weightscale = 1f;
 		//weightscale = Script.weightScale;
-
+		GlobalScalers Script = GameObject.FindGameObjectWithTag("GameController").GetComponent<GlobalScalers>();
+		print("Script.largestLink: " + Script.largestLink);
+		weightscale = Script.largestLink;
 
 
         //gameControl = FindObjectOfType<GameController>();
@@ -137,10 +139,11 @@ public class Link : MonoBehaviour
     {
         // moved from Start() in Update(), otherwise it won't see runtime updates of intendedLinkLength
         intendedLinkLengthSqr = intendedLinkLength * intendedLinkLength;
-
+		/*
 		GlobalScalers Script = GameObject.FindGameObjectWithTag("GameController").GetComponent<GlobalScalers>();
 		print("Script.largestLink: " + Script.largestLink);
 		weightscale = Script.largestLink;
+
 
 		if (direction == true)
 		{
@@ -154,7 +157,7 @@ public class Link : MonoBehaviour
 			lineRenderer.endWidth = 0.25f*weight/weightscale;
 
 		}
-
+*/
         lineRenderer.SetPosition(0, source.transform.position);
         lineRenderer.SetPosition(1, target.transform.position);
 

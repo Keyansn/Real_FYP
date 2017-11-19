@@ -10,7 +10,7 @@ public class GlobalScalers : MonoBehaviour {
 	public float largestLink;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		
 
 		//find largest link

@@ -27,11 +27,13 @@ public class EigenvectorCentrality : MonoBehaviour {
 	void Start () {
 		degree = 0;
 		ec = 0;
+		CountCentrality();
+		StartCoroutine(Begin());
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		CountCentrality();
+		//CountCentrality();
 	}
 
 	void CountCentrality(){
@@ -79,6 +81,12 @@ public class EigenvectorCentrality : MonoBehaviour {
 
 	}
 
+
+	IEnumerator Begin()
+	{
+		yield return new WaitForSeconds(1);
+		CountCentrality();
+	}
 }
 
 
