@@ -54,6 +54,8 @@ MonoBehaviour:
   id: 
   source: {fileID: 0}
   target: {fileID: 0}
+  weight: 0
+  weightscale: 0
   direction: 0
   colorStart: {r: 1, g: 0, b: 0, a: 1}
   colorEnd: {r: 0, g: 1, b: 0, a: 1}

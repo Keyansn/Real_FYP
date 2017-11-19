@@ -86,6 +86,8 @@ public class InputFile : MonoBehaviour
             XmlNode _source = node.FirstChild;          
             XmlNode _target = _source.NextSibling;
             XmlNode _direction = _target.NextSibling;
+			XmlNode _weight = _direction.NextSibling;
+
 
             print(_source.InnerXml + " " + _target.InnerXml );
 
@@ -96,6 +98,7 @@ public class InputFile : MonoBehaviour
             //Sets the source and target nodes for the connection
             clone.GetComponent<Link>().source = GameObject.Find(_source.InnerXml);
             clone.GetComponent<Link>().target = GameObject.Find(_target.InnerXml);
+			clone.GetComponent<Link>().weight = float.Parse((_weight.InnerXml));
 
             //Checks if link has a direction asssigned to it
             if (_direction.InnerXml == "True")

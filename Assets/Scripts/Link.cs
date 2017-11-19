@@ -8,6 +8,9 @@ public class Link : MonoBehaviour
     public string id;
     public GameObject source;
     public GameObject target;
+	public float weight;
+	public float weightscale;
+
     public bool direction;
     public static float intendedLinkLength;
     public static float forceStrength;
@@ -21,9 +24,11 @@ public class Link : MonoBehaviour
     private float intendedLinkLengthSqr;
     private float distSqrNorm;
 
-
     public Color colorStart = Color.red;
     public Color colorEnd = Color.green;
+
+	//public GlobalScalers Script;
+	//public GameObject CodeAttachment;
 
 
     void doAttraction()
@@ -52,9 +57,15 @@ public class Link : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+		//GlobalScalers Script = GetComponent<GlobalScalers>();
+		weightscale = 1f;
+		//weightscale = Script.weightScale;
+
+
+
         //gameControl = FindObjectOfType<GameController>();
         //graphControl = FindObjectOfType<GraphController>();
-
+		//weightScale = 1;
         lineRenderer = gameObject.AddComponent<LineRenderer>();
 
         //color link according to status
@@ -62,6 +73,7 @@ public class Link : MonoBehaviour
         c = Color.cyan;
         c.a = 0.5f;
         
+
 
         //draw line
         //lineRenderer.material = new Material(Shader.Find("Self-Illumin/Diffuse"));
@@ -86,18 +98,21 @@ public class Link : MonoBehaviour
         lineRenderer.colorGradient = gradient;
         */
 
+		print("weight" + weight);
+		print("weightScale" + weightscale);
+
         if (direction == true)
         {
-            lineRenderer.startWidth = 0.5f;
-            lineRenderer.endWidth = 0.1f;
+			lineRenderer.startWidth = 0.5f*weight*weightscale;
+			lineRenderer.endWidth = 0.1f*weight*weightscale;
             //lineRenderer.SetColors(Color.red, Color.cyan);
             lineRenderer.startColor = Color.blue;
             lineRenderer.endColor = Color.cyan;
         }
         else
         {
-            lineRenderer.startWidth = 0.25f;
-            lineRenderer.endWidth = 0.25f;
+			lineRenderer.startWidth = 0.25f*weight*weightscale;
+			lineRenderer.endWidth = 0.25f*weight*weightscale;
             //lineRenderer.SetColors(Color.red, Color.cyan);
             lineRenderer.startColor = Color.magenta;
             lineRenderer.endColor = Color.magenta;
@@ -123,16 +138,30 @@ public class Link : MonoBehaviour
         // moved from Start() in Update(), otherwise it won't see runtime updates of intendedLinkLength
         intendedLinkLengthSqr = intendedLinkLength * intendedLinkLength;
 
+		GlobalScalers Script = GameObject.FindGameObjectWithTag("GameController").GetComponent<GlobalScalers>();
+		print("Script.largestLink: " + Script.largestLink);
+		weightscale = Script.largestLink;
+
+		if (direction == true)
+		{
+			lineRenderer.startWidth = 0.5f*weight/weightscale;
+			lineRenderer.endWidth = 0.1f*weight/weightscale;
+
+		}
+		else
+		{
+			lineRenderer.startWidth = 0.25f*weight/weightscale;
+			lineRenderer.endWidth = 0.25f*weight/weightscale;
+
+		}
+
         lineRenderer.SetPosition(0, source.transform.position);
         lineRenderer.SetPosition(1, target.transform.position);
+
+
 
         //Make line flash between red and green 
         //lineRenderer.material.color = Color.Lerp(colorStart, colorEnd, (Mathf.PingPong(Time.time, 1) / 1));
     }
-
-    void FixedUpdate()
-    {
-        //if (!graphControl.AllStatic)
-        //    doAttraction();
-    }
+		
 }

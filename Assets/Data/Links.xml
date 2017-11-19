@@ -44,38 +44,43 @@
 	    <y></y>
 	    <z></z>
 	  </node>
+	  </nodes>
 	  
-	  
-
+	  <links>
 	  <link>
 	    <source> Ted </source>
 	    <target> Marshall </target>
 	    <direction>False</direction>
+	    <weight>1</weight>
 	  </link>
 
 	  <link>
 	    <source> Ted </source>
 	    <target> Lily </target>
 	    <direction>False</direction>
+	    <weight>3</weight>
 	  </link>
 
 	  <link>
 	    <source> Lily </source>
 	    <target> Marshall </target>
-	    <direction>False</direction>
+	    <direction>True</direction>
+	    <weight>6</weight>
 	  </link>
 
 	  <link>
 	    <source> Ted </source>
 	    <target> Barney </target>
-	    <direction>False</direction>
+	    <direction>True</direction>
+	    <weight>1</weight>
 	  </link>
 
 	  <link>
 	    <source> Ted </source>
 	    <target> Robin </target>
 	    <direction>False</direction>
+	    <weight>2</weight>
 	  </link>
-
-	</nodes>
+	  </links>
+	
 </ItemDB>
