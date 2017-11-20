@@ -597,7 +597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ba96c7b8ab1ceb40ad2a94a6e296e5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xmlRawFile: {fileID: 4900000, guid: 3daae54db7f9c6b4eb864cfe0810f49d, type: 3}
+  xmlRawFile: {fileID: 4900000, guid: e0477f7d8de3c6545aea13e5af861489, type: 3}
 --- !u!4 &425868447
 Transform:
   m_ObjectHideFlags: 0

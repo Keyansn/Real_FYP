@@ -61,6 +61,7 @@ public class Link : MonoBehaviour
 		weightscale = 1f;
 		//weightscale = Script.weightScale;
 		GlobalScalers Script = GameObject.FindGameObjectWithTag("GameController").GetComponent<GlobalScalers>();
+
 		print("Script.largestLink: " + Script.largestLink);
 		weightscale = Script.largestLink;
 
@@ -105,16 +106,16 @@ public class Link : MonoBehaviour
 
         if (direction == true)
         {
-			lineRenderer.startWidth = 0.5f*weight*weightscale;
-			lineRenderer.endWidth = 0.1f*weight*weightscale;
+			lineRenderer.startWidth = 0.5f*weight/weightscale;
+			lineRenderer.endWidth = 0.1f*weight/weightscale;
             //lineRenderer.SetColors(Color.red, Color.cyan);
             lineRenderer.startColor = Color.blue;
             lineRenderer.endColor = Color.cyan;
         }
         else
         {
-			lineRenderer.startWidth = 0.25f*weight*weightscale;
-			lineRenderer.endWidth = 0.25f*weight*weightscale;
+			lineRenderer.startWidth = 0.25f*weight/weightscale;
+			lineRenderer.endWidth = 0.25f*weight/weightscale;
             //lineRenderer.SetColors(Color.red, Color.cyan);
             lineRenderer.startColor = Color.magenta;
             lineRenderer.endColor = Color.magenta;

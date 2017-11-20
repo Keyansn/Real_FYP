@@ -1,21 +1,21 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EigenvectorCentrality.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Link.cs">
     <Files>
+      <File FileName="Assets\Scripts\InputFile.cs" Line="24" Column="15" />
       <File FileName="Assets\Scripts\XmlSave.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ColorSpheres.cs" Line="13" Column="21" />
-      <File FileName="Assets\Scripts\ButtonExample.cs" Line="36" Column="3" />
-      <File FileName="Assets\Scripts\ButtonLines.cs" Line="86" Column="33" />
+      <File FileName="Assets\Scripts\ColorSpheres.cs" Line="40" Column="47" />
+      <File FileName="Assets\Scripts\ButtonExample.cs" Line="45" Column="3" />
+      <File FileName="Assets\Scripts\ButtonLines.cs" Line="23" Column="6" />
       <File FileName="Assets\Scripts\SetText.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\MouseLook.cs" Line="1" Column="1" />
       <File FileName="Assets\Data\Links.xml" Line="73" Column="31" />
       <File FileName="Assets\Data\save_data.xml.xml" Line="1" Column="1" />
-      <File FileName="Assets\Data\Vulps.xml" Line="2029" Column="82" />
+      <File FileName="Assets\Data\Vulps.xml" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Dijkstra.cs" Line="9" Column="3" />
-      <File FileName="Assets\Scripts\EigenvectorCentrality.cs" Line="31" Column="27" />
-      <File FileName="Assets\Scripts\GlobalScalers.cs" Line="32" Column="36" />
-      <File FileName="Assets\Scripts\InputFile.cs" Line="24" Column="15" />
-      <File FileName="Assets\Scripts\Link.cs" Line="58" Column="17" />
+      <File FileName="Assets\Scripts\EigenvectorCentrality.cs" Line="75" Column="6" />
+      <File FileName="Assets\Scripts\GlobalScalers.cs" Line="28" Column="43" />
+      <File FileName="Assets\Scripts\Link.cs" Line="111" Column="61" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
