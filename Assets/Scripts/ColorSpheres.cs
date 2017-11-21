@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 
 public class ColorSpheres : MonoBehaviour {
 
     public Material[] materials;//Allows input of material colors in a set size of array;
+	public Material materialsS;//Allows input of material colors in a set size of array;
+	public Material materialsE;//Allows input of material colors in a set size of array;
     public Renderer Rend; //What are we rendering? Input object(Sphere,Cylinder,...) to render.
     GameObject[] nodelist;
     int node_length;
@@ -35,12 +38,17 @@ public class ColorSpheres : MonoBehaviour {
         if (Input.GetMouseButton(0))
             Debug.Log("Pressed left click.");
 
-        //doesn't work, no idea why
+        //doesn't work, I know why now
+		/*
+		 * the OnMouseDown() event handler that you can use when hovering over GUIElements and colliders only gets triggered by the left mouse button.
+		 * 
         if (Input.GetMouseButton(1))
             Debug.Log("Pressed right click.");
 
         if (Input.GetMouseButton(2))
             Debug.Log("Pressed middle click.");
+            */
+
 
 
         if (Input.GetMouseButtonDown(0))
@@ -63,9 +71,9 @@ public class ColorSpheres : MonoBehaviour {
 			else{
 				transform.GetChild(0).tag = "Not_Highlighted";
 			}
-
-			//CountHighlightedNodes();
 			/*
+			//CountHighlightedNodes();
+
             nodelist = GameObject.FindGameObjectsWithTag("Node");
             node_length = nodelist.Length;
 
@@ -73,11 +81,7 @@ public class ColorSpheres : MonoBehaviour {
             {
                 Debug.Log(GameObject.FindGameObjectsWithTag("Node")[i].transform.position);
             }
-
-            */
-
-
-            /*
+            
             Object prefab = AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Cube.prefab", typeof(GameObject));
             GameObject clone = Instantiate(prefab, Vector3.zero, Quaternion.identity) as GameObject;
             clone.transform.position = Vector3.one;
@@ -96,9 +100,51 @@ public class ColorSpheres : MonoBehaviour {
             //node text always facing camera
             nodeText.transform.LookAt(Camera.main.transform);
             nodeText.transform.Rotate(0,180F,0);
+
         
 
     }
+
+	void OnMouseOver(){
+		if (!Input.GetKey(KeyCode.LeftShift)&&(Input.GetMouseButtonDown(1)))
+		{
+			print("Right clicked, going to set the start node");
+			RemoveOthers("Start");
+			transform.GetChild(0).tag = "Start";
+			Rend.sharedMaterial = materialsS;
+
+		}
+			
+
+		if (Input.GetKey(KeyCode.LeftShift)&&(Input.GetMouseButtonDown(1)))
+		{
+			print("Held left shift and right clicked, going to set the end node");
+			RemoveOthers("End");
+			transform.GetChild(0).tag = "End";
+			Rend.sharedMaterial = materialsE;
+		}
+			
+	}
+
+	void RemoveOthers(String tag){
+		
+		nodelist = GameObject.FindGameObjectsWithTag("Node");
+		node_length = nodelist.Length;
+
+		for (int i = 0; i < node_length; i++)
+		{
+			if (nodelist[i].transform.GetChild(0).tag == tag){
+				nodelist[i].transform.GetChild(0).tag = "Not_Highlighted";
+				nodelist[i].GetComponent<Renderer>().sharedMaterial = materials[0];
+			}
+
+		}
+
+		//GameObject.FindGameObjectWithTag(tag).tag;
+
+	}
+
+
 	/*
 	public void CountHighlightedNodes(){
 		highlightedlist = GameObject.FindGameObjectsWithTag("Highlighted");

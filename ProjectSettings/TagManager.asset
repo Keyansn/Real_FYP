@@ -8,6 +8,8 @@ TagManager:
   - link
   - Highlighted
   - Not_Highlighted
+  - Start
+  - End
   layers:
   - Default
   - TransparentFX

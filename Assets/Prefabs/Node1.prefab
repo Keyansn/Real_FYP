@@ -207,6 +207,8 @@ MonoBehaviour:
   materials:
   - {fileID: 2100000, guid: e1733da51318a304486325d6160413b1, type: 2}
   - {fileID: 2100000, guid: ada1732e7f6423a48a2c4bc0b4aa4d7d, type: 2}
+  materialsS: {fileID: 2100000, guid: f2b064a50f507654c90dfd838daabeb9, type: 2}
+  materialsE: {fileID: 2100000, guid: ef60935bb2d46f142b21e82940c6a99d, type: 2}
   Rend: {fileID: 0}
   id: 
   nodeText: {fileID: 102140720483196486}
