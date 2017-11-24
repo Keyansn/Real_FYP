@@ -173,6 +173,24 @@ public class Dijkstra : MonoBehaviour {
 			print(item);
 		}
 
+		//get all links in paths and change colour
+
+
+
+		for (int n = 0; n < path.Count-1; n++) {
+			foreach (GameObject item in linklist) {
+				if (((item.GetComponent<Link>().source == path[n])&(item.GetComponent<Link>().target == path[n+1]))||((item.GetComponent<Link>().target == path[n])&(item.GetComponent<Link>().source == path[n+1]))) 
+				{
+					item.GetComponent<Link>().colorStart = Color.yellow;
+					item.GetComponent<Link>().colorEnd = Color.yellow;
+					print ("Changed colour");
+					print(path[n] + " to " + path[n + 1]);
+					item.GetComponent<Link>().ChangeColour();
+				}
+			}
+		}
+
+
 
 //		nodes.Sort((x, y) => costs[x] - costs[y]);
 //

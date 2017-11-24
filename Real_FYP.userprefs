@@ -12,10 +12,10 @@
       <File FileName="Assets\Data\Links.xml" Line="1" Column="1" />
       <File FileName="Assets\Data\save_data.xml.xml" Line="1" Column="1" />
       <File FileName="Assets\Data\Vulps.xml" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Dijkstra.cs" Line="20" Column="1" />
       <File FileName="Assets\Scripts\EigenvectorCentrality.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\GlobalScalers.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Link.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Dijkstra.cs" Line="176" Column="45" />
+      <File FileName="Assets\Scripts\Link.cs" Line="172" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

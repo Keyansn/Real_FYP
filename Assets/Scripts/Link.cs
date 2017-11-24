@@ -135,6 +135,7 @@ public class Link : MonoBehaviour
     }
 
 
+
     // Update is called once per frame
     void Update()
     {
@@ -167,5 +168,10 @@ public class Link : MonoBehaviour
         //Make line flash between red and green 
         //lineRenderer.material.color = Color.Lerp(colorStart, colorEnd, (Mathf.PingPong(Time.time, 1) / 1));
     }
+
+	public void ChangeColour(){
+		lineRenderer.startColor = colorStart;
+		lineRenderer.endColor = colorEnd;
+	}
 		
 }
