@@ -12,8 +12,8 @@ using NUnit.Framework;
 
 public class Dijkstra : MonoBehaviour {
 
-	GameObject StartNode;
-	GameObject EndNode;
+	GameObject _Start;
+	GameObject _End;
 	GameObject[] Nodes;
 	//GameObject[] AvailableNodes;
 	GameObject[] linklist;
@@ -45,18 +45,18 @@ public class Dijkstra : MonoBehaviour {
 		if((GameObject.FindGameObjectWithTag("Start"))&(GameObject.FindGameObjectWithTag("End"))){
 			//print("Start and End Found");
 			if (i == 0){
-
-				Calculate();
+				_Start = getParent("Start");
+				_End = getParent("End");
+				Calculate(_Start,_End,true);
 			}
 			i = 1;
 		} 
 	}
 
-	public void Calculate(){
+	public int Calculate(GameObject StartNode, GameObject EndNode, bool highlight){
 		
 		linklist = GameObject.FindGameObjectsWithTag("link");
-		StartNode = getParent("Start");
-		EndNode = getParent("End");
+
 
 		nodes.AddRange(GameObject.FindGameObjectsWithTag("Node"));
 		IDictionary<GameObject, GameObject> previous =  new Dictionary<GameObject, GameObject>();
@@ -175,68 +175,22 @@ public class Dijkstra : MonoBehaviour {
 
 		//get all links in paths and change colour
 
+		if (highlight) {
 
-
-		for (int n = 0; n < path.Count-1; n++) {
-			foreach (GameObject item in linklist) {
-				if (((item.GetComponent<Link>().source == path[n])&(item.GetComponent<Link>().target == path[n+1]))||((item.GetComponent<Link>().target == path[n])&(item.GetComponent<Link>().source == path[n+1]))) 
-				{
-					item.GetComponent<Link>().colorStart = Color.yellow;
-					item.GetComponent<Link>().colorEnd = Color.yellow;
-					print ("Changed colour");
-					print(path[n] + " to " + path[n + 1]);
-					item.GetComponent<Link>().ChangeColour();
+			for (int n = 0; n < path.Count - 1; n++) {
+				foreach (GameObject item in linklist) {
+					if (((item.GetComponent<Link>().source == path[n]) & (item.GetComponent<Link>().target == path[n + 1])) || ((item.GetComponent<Link>().target == path[n]) & (item.GetComponent<Link>().source == path[n + 1]))) {
+						item.GetComponent<Link>().colorStart = Color.yellow;
+						item.GetComponent<Link>().colorEnd = Color.yellow;
+						print("Changed colour");
+						print(path[n] + " to " + path[n + 1]);
+						item.GetComponent<Link>().ChangeColour();
+					}
 				}
 			}
 		}
-
-
-
-//		nodes.Sort((x, y) => costs[x] - costs[y]);
-//
-//		foreach (GameObject thing in nodes){
-//			print(thing);
-//		}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		linklist = GameObject.FindGameObjectsWithTag("link");
-		//link_length = linklist.Length;
-
-		foreach (GameObject link in linklist) {
-			if ((link.GetComponent<Link>().source == StartNode)){
-				AvailableLinks.Add(link);
-			}
-			if (link.GetComponent<Link>().target == StartNode) {
-				AvailableLinks.Add(link);
-			}
-		}
-
-		test = getSmallest(AvailableLinks);
-		print(test.GetComponent<Link>().weight);
-
-		//print(getSmallest(AvailableLinks).GetComponent<Link>().weight);
-
-		print(StartNode + " " + EndNode);
-
-		foreach (GameObject thing in AvailableLinks){
-			print(thing);
-		}
-
+			
+		return path.Count;
 	}
 
 	GameObject getParent(string Tag){

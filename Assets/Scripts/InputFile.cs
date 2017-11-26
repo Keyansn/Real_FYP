@@ -10,7 +10,7 @@ public class InputFile : MonoBehaviour
 {
     //the xml file attached
     public TextAsset xmlRawFile;
-	private float scalesize = 50;
+	private float scalesize = 10;
 
 	/*
 	 * Important:
