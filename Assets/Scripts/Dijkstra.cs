@@ -18,13 +18,10 @@ public class Dijkstra : MonoBehaviour {
 	//GameObject[] AvailableNodes;
 	GameObject[] linklist;
 	int link_length;
-	public List<GameObject> AvailableLinks = new List<GameObject>();
-	public List<GameObject> nodes = new List<GameObject>();
-	public List<GameObject> NodesVisited = new List<GameObject>();
-	public List<GameObject> path = new List<GameObject>();
 	int i;
 	private GameObject smallest;
 	private GameObject test;
+	bool debug = false; 
 
 
 	      
@@ -56,6 +53,10 @@ public class Dijkstra : MonoBehaviour {
 	public int Calculate(GameObject StartNode, GameObject EndNode, bool highlight){
 		
 		linklist = GameObject.FindGameObjectsWithTag("link");
+		List<GameObject> AvailableLinks = new List<GameObject>();
+		List<GameObject> nodes = new List<GameObject>();
+		List<GameObject> NodesVisited = new List<GameObject>();
+		List<GameObject> path = new List<GameObject>();
 
 
 		nodes.AddRange(GameObject.FindGameObjectsWithTag("Node"));
@@ -86,10 +87,6 @@ public class Dijkstra : MonoBehaviour {
 				}
 			}
 
-			print("smallest " + smallest);
-
-			//smallest = getSmallest(nodes);
-
 			nodes.Remove(smallest);
 
 			if (smallest == EndNode){
@@ -115,10 +112,8 @@ public class Dijkstra : MonoBehaviour {
 					{
 						distance[link.GetComponent<Link>().target] = link.GetComponent<Link>().weight+ distance[link.GetComponent<Link>().source];
 						previous[link.GetComponent<Link>().target] = link.GetComponent<Link>().source;
-						print("Ding!");
-						foreach (KeyValuePair<GameObject, GameObject> item in previous) {
-							print("prev: " + item.Key + item.Value);
-						}
+						//print("Ding!");
+
 					}
 				}
 
@@ -128,36 +123,15 @@ public class Dijkstra : MonoBehaviour {
 					{
 						distance[link.GetComponent<Link>().source] = link.GetComponent<Link>().weight+ distance[link.GetComponent<Link>().target];
 						previous[link.GetComponent<Link>().source] = link.GetComponent<Link>().target;
-						print("Ding!");
-						foreach (KeyValuePair<GameObject, GameObject> item in previous) {
-							print("prev: " + item.Key + item.Value);
-						}
+						//print("Ding!");
+
 					}
 				}
 			}
 				
 			NodesVisited.Add(smallest);
 
-
-
-			print("Looped");
-
-			foreach (KeyValuePair<GameObject, GameObject> item in previous) {
-				print("prev: " + item.Key + item.Value);
-			}
-
 		}
-
-		print("Bingo");
-
-		foreach (KeyValuePair<GameObject, float> item in distance) {
-			print("Dict: " + item.Key + item.Value);
-		}
-
-		foreach (KeyValuePair<GameObject, GameObject> item in previous) {
-			print("prev: " + item.Key + item.Value);
-		}
-
 
 		//StartNode,EndNode
 		GameObject dist = EndNode;
@@ -167,11 +141,7 @@ public class Dijkstra : MonoBehaviour {
 			dist = previous[dist];
 			path.Add(dist);
 		}
-		path.Reverse();
-
-		foreach (GameObject item in path) {
-			print(item);
-		}
+		//path.Reverse();
 
 		//get all links in paths and change colour
 
@@ -182,15 +152,26 @@ public class Dijkstra : MonoBehaviour {
 					if (((item.GetComponent<Link>().source == path[n]) & (item.GetComponent<Link>().target == path[n + 1])) || ((item.GetComponent<Link>().target == path[n]) & (item.GetComponent<Link>().source == path[n + 1]))) {
 						item.GetComponent<Link>().colorStart = Color.yellow;
 						item.GetComponent<Link>().colorEnd = Color.yellow;
-						print("Changed colour");
-						print(path[n] + " to " + path[n + 1]);
+						//print("Changed colour");
+						//print(path[n] + " to " + path[n + 1]);
 						item.GetComponent<Link>().ChangeColour();
 					}
 				}
 			}
 		}
-			
-		return path.Count;
+
+
+
+		nodes.Clear();
+		AvailableLinks.Clear();
+		NodesVisited.Clear();
+
+		int pathlength = path.Count - 1;
+		path.Clear();
+
+		return pathlength;
+
+
 	}
 
 	GameObject getParent(string Tag){

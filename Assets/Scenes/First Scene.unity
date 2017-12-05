@@ -578,6 +578,8 @@ GameObject:
   - component: {fileID: 425868449}
   - component: {fileID: 425868451}
   - component: {fileID: 425868452}
+  - component: {fileID: 425868453}
+  - component: {fileID: 425868454}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -596,15 +598,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ba96c7b8ab1ceb40ad2a94a6e296e5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xmlRawFile: {fileID: 4900000, guid: e0477f7d8de3c6545aea13e5af861489, type: 3}
+  xmlRawFile: {fileID: 4900000, guid: 6dd613390fb7ddd428b382ce13fdec27, type: 3}
 --- !u!4 &425868447
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 425868445}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 650.53125, y: 444.43582, z: -551.75}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -625,7 +627,7 @@ MonoBehaviour:
   itemDB:
     nodes: []
     links: []
-  Filename: save_data.xml
+  Filename: save_data123.xml
 --- !u!114 &425868449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -676,10 +678,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 646dcc0c74df38c409e1e3729634d825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AvailableLinks: []
-  nodes: []
-  NodesVisited: []
-  path: []
+--- !u!114 &425868453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 425868445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96bebeb35d978e54caa2cb56a849ee9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enabled: 0
+--- !u!114 &425868454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 425868445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f010a997e7a32d343863df69b965be2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stiffness: 1
+  naturalLength: 1
+  gravityPull: 2
+  CoulombsConstant: 1
 --- !u!1 &570266637
 GameObject:
   m_ObjectHideFlags: 0

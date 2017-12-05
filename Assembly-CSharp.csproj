@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\ColorSpheres.cs" />
      <Compile Include="Assets\Scripts\Dijkstra.cs" />
      <Compile Include="Assets\Scripts\EigenvectorCentrality.cs" />
+     <Compile Include="Assets\Scripts\FDG.cs" />
      <Compile Include="Assets\Scripts\GlobalScalers.cs" />
      <Compile Include="Assets\Scripts\InputFile.cs" />
      <Compile Include="Assets\Scripts\Link.cs" />
@@ -75,6 +76,7 @@
      <None Include="Assets\StreamingAssets\XML\save_vulps.xml" />
      <None Include="Assets\StreamingAssets\XML\save.xml" />
      <None Include="Assets\Data\test.xml" />
+     <None Include="Assets\Data\save_data123.xml.xml" />
      <None Include="Assets\StreamingAssets\XML\item_data2.xml" />
      <None Include="Assets\StreamingAssets\XML\save_data_test.xml" />
      <None Include="Assets\Data\Vulps.xml" />

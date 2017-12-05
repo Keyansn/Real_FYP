@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<ItemDB xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <nodes>
+    <node>
+      <name> Ted </name>
+      <ID>1</ID>
+      <data>data</data>
+      <x>-9.624861</x>
+      <y>-3.31003571</y>
+      <z>8.986964</z>
+    </node>
+    <node>
+      <name> Marshall </name>
+      <ID>1</ID>
+      <data>data</data>
+      <x>9.444944</x>
+      <y>-9.353106</y>
+      <z>-8.594898</z>
+    </node>
+    <node>
+      <name> Lily </name>
+      <ID>1</ID>
+      <data>data</data>
+      <x>-8.770044</x>
+      <y>-8.655691</y>
+      <z>8.87266</z>
+    </node>
+    <node>
+      <name> Barney </name>
+      <ID>1</ID>
+      <data>data</data>
+      <x>-3.10497665</x>
+      <y>2.55051374</y>
+      <z>-6.92439842</z>
+    </node>
+    <node>
+      <name> Robin </name>
+      <ID>1</ID>
+      <data>data</data>
+      <x>4.365604</x>
+      <y>-7.9608345</y>
+      <z>3.51630926</z>
+    </node>
+    <node>
+      <name>Katrina</name>
+      <ID>1</ID>
+      <data>data</data>
+      <x>-4.868227</x>
+      <y>3.69212341</y>
+      <z>4.694457</z>
+    </node>
+    <node>
+      <name>Teresa</name>
+      <ID>1</ID>
+      <data>data</data>
+      <x>-2.372857</x>
+      <y>7.633219</y>
+      <z>0.9242163</z>
+    </node>
+    <node>
+      <name>Patty</name>
+      <ID>1</ID>
+      <data>data</data>
+      <x>7.485752</x>
+      <y>-0.930565834</y>
+      <z>0.00544166565</z>
+    </node>
+    <node>
+      <name>Florence</name>
+      <ID>1</ID>
+      <data>data</data>
+      <x>-7.52914429</x>
+      <y>-6.97418</y>
+      <z>3.532617</z>
+    </node>
+    <node>
+      <name>Michael</name>
+      <ID>1</ID>
+      <data>data</data>
+      <x>1.827692</x>
+      <y>-4.84132862</y>
+      <z>2.60374522</z>
+    </node>
+    <node>
+      <name>Franklin</name>
+      <ID>1</ID>
+      <data>data</data>
+      <x>5.105109</x>
+      <y>4.02268171</y>
+      <z>-1.59727478</z>
+    </node>
+    <node>
+      <name>Paloma</name>
+      <ID>1</ID>
+      <data>data</data>
+      <x>9.813488</x>
+      <y>5.98747</y>
+      <z>1.90617657</z>
+    </node>
+    <node>
+      <name>Odette</name>
+      <ID>1</ID>
+      <data>data</data>
+      <x>-4.01896858</x>
+      <y>9.61212</y>
+      <z>7.314305</z>
+    </node>
+    <node>
+      <name>Etsuko</name>
+      <ID>1</ID>
+      <data>data</data>
+      <x>-8.906851</x>
+      <y>-6.676729</y>
+      <z>-6.633468</z>
+    </node>
+  </nodes>
+  <links>
+    <link>
+      <source> Ted </source>
+      <target> Marshall </target>
+      <direction>False</direction><weight>1</weight>
+    </link>
+    <link>
+      <source> Ted </source>
+      <target> Lily </target>
+      <direction>False</direction><weight>1</weight>
+    </link>
+    <link>
+      <source> Lily </source>
+      <target> Marshall </target>
+      <direction>True</direction><weight>1</weight>
+    </link>
+    <link>
+      <source> Ted </source>
+      <target> Barney </target>
+      <direction>True</direction><weight>1</weight>
+    </link>
+    <link>
+      <source> Ted </source>
+      <target> Robin </target>
+      <direction>False</direction><weight>1</weight>
+    </link>
+    <link>
+      <source> Barney </source>
+      <target>Odette</target>
+      <direction>False</direction><weight>1</weight>
+    </link>
+    <link>
+      <source>Etsuko</source>
+      <target>Florence</target>
+      <direction>True</direction><weight>1</weight>
+    </link>
+    <link>
+      <source> Lily </source>
+      <target>Katrina</target>
+      <direction>True</direction><weight>1</weight>
+    </link>
+    <link>
+      <source>Franklin</source>
+      <target>Katrina</target>
+      <direction>False</direction><weight>1</weight>
+    </link>
+    <link>
+      <source> Barney </source>
+      <target>Teresa</target>
+      <direction>True</direction><weight>1</weight>
+    </link>
+    <link>
+      <source> Ted </source>
+      <target>Odette</target>
+      <direction>False</direction><weight>1</weight>
+    </link>
+    <link>
+      <source> Robin </source>
+      <target>Patty</target>
+      <direction>True</direction><weight>1</weight>
+    </link>
+    <link>
+      <source> Robin </source>
+      <target>Florence</target>
+      <direction>False</direction><weight>1</weight>
+    </link>
+    <link>
+      <source> Marshall </source>
+      <target>Michael</target>
+      <direction>True</direction><weight>1</weight>
+    </link>
+    <link>
+      <source>Odette</source>
+      <target>Teresa</target>
+      <direction>True</direction><weight>1</weight>
+    </link>
+    <link>
+      <source>Teresa</source>
+      <target>Michael</target>
+      <direction>True</direction><weight>1</weight>
+    </link>
+    <link>
+      <source> Lily </source>
+      <target>Odette</target>
+      <direction>True</direction><weight>1</weight>
+    </link>
+    <link>
+      <source> Robin </source>
+      <target>Paloma</target>
+      <direction>False</direction><weight>1</weight>
+    </link>
+    <link>
+      <source>Paloma</source>
+      <target>Patty</target>
+      <direction>True</direction><weight>1</weight>
+    </link>
+  </links>
+</ItemDB>

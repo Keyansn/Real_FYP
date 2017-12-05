@@ -3,16 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using System.Linq;
-using System.Random;
-using System.Security.Cryptography.X509Certificates;
-using System.Security.Cryptography;
+
 
 public class WCR : MonoBehaviour {
+
+	public bool enabled;
+	private bool debug = true; // Template ->   if (debug) {print("n: " + n);}
 
 	// Use this for initialization
 	void Start () {
 		print("WCR: ");
-		WCR_function();
+		print(Mathf.Pow(8, -2));
+		if (enabled) {
+			WCR_function();
+		}
+
 	}
 
 	// Update is called once per frame
@@ -21,17 +26,100 @@ public class WCR : MonoBehaviour {
 	}
 
 	void WCR_function(){
-		float c = 1000;
-		for (int i = 0; i < 20; i++) {
-			print(c);
+		GameObject[] nodelist;
+		int node_length;
 
-			Random r = new Random();
-			foreach (int index in Enumerable.Range(0, 9).OrderBy(x => r.Next()))
+		nodelist = GameObject.FindGameObjectsWithTag("Node");
+		node_length = nodelist.Length;
+
+		foreach (GameObject item in nodelist) {
+			if (debug) {
+				print(item.transform.position);
+				//item.transform.position = new Vector3(Random.value, Random.value, Random.value);
+			}
+		}
+
+		float weight_ij;
+		float dist_ij;
+		float weight;
+		float moveX,moveY,moveZ;
+		float c = 1000;
+		float xi, yi, zi, xj, yj, zj;
+		Vector3 currentPositioni;
+		currentPositioni = Vector3.zero;
+		Vector3 currentPositionj;
+		currentPositionj = Vector3.zero;
+
+
+		for (int n = 0; n < 20; n++) {
+			if (debug) {print("n: " + n);}
+
+			for (int i = 0; i < node_length; i++) {
+				for (int j = 0; j < node_length; j++) {
+					if (j<i) {
+
+
+						Dijkstra eScript = GameObject.FindGameObjectWithTag("GameController").GetComponent<Dijkstra>();
+						dist_ij = eScript.Calculate(nodelist[i], nodelist[j], false);
+						if (debug) {print("dist_ij: " + dist_ij);}
+						weight_ij = (float)Mathf.Pow(dist_ij,-2);
+						weight = weight_ij * c;
+
+						if (weight>2){
+							weight = 2;
+						}
+
+						if (debug) {print("weight: " + weight);}
+						if (debug) {print("weight_ij: " + weight_ij);}
+
+						//        dist_ij - ||Xi-Xj||    Xi-Xj
+						// move = -------------------   -------
+						// 		 		   2           ||Xi-Xj||
+
+						// Separate out x,y and z
+						xi = nodelist[i].transform.position.x;
+						xj = nodelist[j].transform.position.x;
+						yi = nodelist[i].transform.position.y;
+						yj = nodelist[j].transform.position.y;
+						zi = nodelist[i].transform.position.z;
+						zj = nodelist[j].transform.position.z;
+
+						if (debug) {print("xi: " + xi);}
+
+						//moveX = (float)((0.5)*(dist_ij - Mathf.Abs(xi-xj)) * ((xi-xj)/Mathf.Abs(xi-xj)));
+						//could use vector3.Distance
+
+						moveX = move(dist_ij,xi,xj);
+						moveY = move(dist_ij,yi,yj);
+						moveZ = move(dist_ij,zi,zj);
+
+						if (debug) {print("moveX: " + moveX);print("moveY: " + moveY);print("moveZ: " + moveZ);}
+
+						currentPositioni.Set(nodelist[i].transform.position.x, nodelist[i].transform.position.y, nodelist[i].transform.position.z);
+						currentPositionj.Set(nodelist[j].transform.position.x, nodelist[j].transform.position.y, nodelist[j].transform.position.z);
+
+						nodelist[i].transform.position = new Vector3(currentPositioni.x + (weight*moveX), currentPositioni.y + (weight*moveY), currentPositioni.z + (weight*moveZ));
+						print("Test:");
+						print(currentPositioni.x + (weight*moveX));
+
+						nodelist[j].transform.position = new Vector3(currentPositionj.x - (weight*moveX), currentPositionj.y - (weight*moveY), currentPositionj.z - (weight*moveZ));
+
+						c = c / 2;
+					}
+
+				}
+			}
+			/*foreach (int index in Enumerable.Range(0, 9).OrderBy(x => r.Next()))
 			{
 				print(index);
-			}
+			}*/
 
 		}
+	}
+
+	float move(float dist, float i, float j){
+		float abs = (float)Mathf.Abs(i - j);
+		return (0.5f)*(dist - abs) * ((i-j)/abs);
 	}
 }
 
@@ -58,22 +146,7 @@ inputs: graph G = (V, E)
 				12 Xj ← Xj − ω m
 				13 c ← c/2
 
+
+
+Wij = (Dij)^-2
 */
-
-/*
-Quick python code for foreach {i, j : j < i}, NOT random though
-
-data = "abcdefghijklmnopqrstuvwxyz"
-combos = []
-
-	n = 26
-
-	for i in range (0,n):
-		for j in range (0,n):
-			if i<j:
-				combos.append(data[i]+data[j])
-
-				print combos
-
-*/
-
