@@ -55,9 +55,11 @@
      <Compile Include="Assets\Scripts\ButtonLines.cs" />
      <Compile Include="Assets\Scripts\CameraControlZeroG.cs" />
      <Compile Include="Assets\Scripts\ColorSpheres.cs" />
+     <Compile Include="Assets\Scripts\Control.cs" />
      <Compile Include="Assets\Scripts\Dijkstra.cs" />
      <Compile Include="Assets\Scripts\EigenvectorCentrality.cs" />
      <Compile Include="Assets\Scripts\FDG.cs" />
+     <Compile Include="Assets\Scripts\ForceTest.cs" />
      <Compile Include="Assets\Scripts\GlobalScalers.cs" />
      <Compile Include="Assets\Scripts\InputFile.cs" />
      <Compile Include="Assets\Scripts\Link.cs" />

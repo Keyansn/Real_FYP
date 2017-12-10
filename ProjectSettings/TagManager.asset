@@ -10,6 +10,7 @@ TagManager:
   - Not_Highlighted
   - Start
   - End
+  - Test
   layers:
   - Default
   - TransparentFX

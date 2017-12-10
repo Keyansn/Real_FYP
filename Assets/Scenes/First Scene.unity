@@ -598,7 +598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ba96c7b8ab1ceb40ad2a94a6e296e5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xmlRawFile: {fileID: 4900000, guid: 6dd613390fb7ddd428b382ce13fdec27, type: 3}
+  xmlRawFile: {fileID: 4900000, guid: e0477f7d8de3c6545aea13e5af861489, type: 3}
 --- !u!4 &425868447
 Transform:
   m_ObjectHideFlags: 0
@@ -701,10 +701,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f010a997e7a32d343863df69b965be2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enabled: 1
   stiffness: 1
   naturalLength: 1
   gravityPull: 2
-  CoulombsConstant: 1
+  CoulombsConstant: 0.01
 --- !u!1 &570266637
 GameObject:
   m_ObjectHideFlags: 0

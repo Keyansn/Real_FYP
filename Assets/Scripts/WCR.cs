@@ -9,20 +9,25 @@ public class WCR : MonoBehaviour {
 
 	public bool enabled;
 	private bool debug = true; // Template ->   if (debug) {print("n: " + n);}
+	float weight_ij;
+	float dist_ij;
+	float weight;
+	float moveX,moveY,moveZ;
+	float c = 1000;
+	float xi, yi, zi, xj, yj, zj;
+	Vector3 currentPositioni = Vector3.zero;
+	Vector3 currentPositionj = Vector3.zero;
 
 	// Use this for initialization
 	void Start () {
-		print("WCR: ");
-		print(Mathf.Pow(8, -2));
-		if (enabled) {
-			WCR_function();
-		}
+		
+		if (enabled) {WCR_function();}
 
 	}
 
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 
 	void WCR_function(){
@@ -39,37 +44,28 @@ public class WCR : MonoBehaviour {
 			}
 		}
 
-		float weight_ij;
-		float dist_ij;
-		float weight;
-		float moveX,moveY,moveZ;
-		float c = 1000;
-		float xi, yi, zi, xj, yj, zj;
-		Vector3 currentPositioni;
-		currentPositioni = Vector3.zero;
-		Vector3 currentPositionj;
-		currentPositionj = Vector3.zero;
 
 
 		for (int n = 0; n < 20; n++) {
-			if (debug) {print("n: " + n);}
+			if (!debug) {print("n: " + n);}
 
 			for (int i = 0; i < node_length; i++) {
 				for (int j = 0; j < node_length; j++) {
-					if (j<i) {
+					if (j < i) {
 
 
 						Dijkstra eScript = GameObject.FindGameObjectWithTag("GameController").GetComponent<Dijkstra>();
 						dist_ij = eScript.Calculate(nodelist[i], nodelist[j], false);
+
 						if (debug) {print("dist_ij: " + dist_ij);}
-						weight_ij = (float)Mathf.Pow(dist_ij,-2);
+
+						weight_ij = (float)Mathf.Pow(dist_ij, -2);
 						weight = weight_ij * c;
 
-						if (weight>2){
-							weight = 2;
-						}
+						if (weight > 2) {weight = 2;}
 
 						if (debug) {print("weight: " + weight);}
+
 						if (debug) {print("weight_ij: " + weight_ij);}
 
 						//        dist_ij - ||Xi-Xj||    Xi-Xj
@@ -84,36 +80,37 @@ public class WCR : MonoBehaviour {
 						zi = nodelist[i].transform.position.z;
 						zj = nodelist[j].transform.position.z;
 
-						if (debug) {print("xi: " + xi);}
+						if (!debug) {
+							print("xi: " + xi);
+						}
 
 						//moveX = (float)((0.5)*(dist_ij - Mathf.Abs(xi-xj)) * ((xi-xj)/Mathf.Abs(xi-xj)));
 						//could use vector3.Distance
 
-						moveX = move(dist_ij,xi,xj);
-						moveY = move(dist_ij,yi,yj);
-						moveZ = move(dist_ij,zi,zj);
+						moveX = move(dist_ij, xi, xj);
+						moveY = move(dist_ij, yi, yj);
+						moveZ = move(dist_ij, zi, zj);
 
-						if (debug) {print("moveX: " + moveX);print("moveY: " + moveY);print("moveZ: " + moveZ);}
+						if (!debug) {
+							print("moveX: " + moveX);
+							print("moveY: " + moveY);
+							print("moveZ: " + moveZ);
+						}
 
 						currentPositioni.Set(nodelist[i].transform.position.x, nodelist[i].transform.position.y, nodelist[i].transform.position.z);
 						currentPositionj.Set(nodelist[j].transform.position.x, nodelist[j].transform.position.y, nodelist[j].transform.position.z);
 
-						nodelist[i].transform.position = new Vector3(currentPositioni.x + (weight*moveX), currentPositioni.y + (weight*moveY), currentPositioni.z + (weight*moveZ));
-						print("Test:");
-						print(currentPositioni.x + (weight*moveX));
+						nodelist[i].transform.position = new Vector3(currentPositioni.x + (weight * moveX), currentPositioni.y + (weight * moveY), currentPositioni.z + (weight * moveZ));
+						//print("Test:");
+						//print(currentPositioni.x + (weight * moveX));
 
-						nodelist[j].transform.position = new Vector3(currentPositionj.x - (weight*moveX), currentPositionj.y - (weight*moveY), currentPositionj.z - (weight*moveZ));
+						nodelist[j].transform.position = new Vector3(currentPositionj.x - (weight * moveX), currentPositionj.y - (weight * moveY), currentPositionj.z - (weight * moveZ));
 
 						c = c / 2;
 					}
 
 				}
 			}
-			/*foreach (int index in Enumerable.Range(0, 9).OrderBy(x => r.Next()))
-			{
-				print(index);
-			}*/
-
 		}
 	}
 
@@ -130,7 +127,7 @@ public class WCR : MonoBehaviour {
 inputs: graph G = (V, E)
 	output: k-dimensional layout X with n vertices
 	2 d{i,j} ← ShortestPaths(G)
-	3 X ← RandomM atrix(n, k)
+	3 X ← Random Matrix(n, k)
 	4 c ← 1000
 	5 for 20 iterations :
 		6 foreach {i, j : j < i} in random order :
