@@ -1,0 +1,39 @@
+<ItemDB>
+<nodes>
+	  <node>
+	    <name> Ted </name>
+	    <ID> 1 </ID>
+	    <data> Alive </data>
+	    <x></x>
+	    <y></y>
+	    <z></z>
+	  </node>
+
+	  <node>
+	    <name> Marshall </name>
+	    <ID> 2 </ID>
+	    <data> Dead </data>
+	    <x></x>
+	    <y></y>
+	    <z></z>
+	  </node>
+
+	  <node>
+	    <name> Lily </name>
+	    <ID> 3 </ID>
+	    <data> Dead </data>
+	    <x></x>
+	    <y></y>
+	    <z></z>
+	  </node>
+	  </nodes>
+
+	  <links>
+	  <link>
+	    <source> Ted </source>
+	    <target> Marshall </target>
+	    <direction>False</direction>
+	    <weight>1</weight>
+	  </link>
+	  </links>
+</ItemDB>

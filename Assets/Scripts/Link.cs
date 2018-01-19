@@ -17,7 +17,7 @@ public class Link : MonoBehaviour
 
     //private static GameController gameControl;
     //private static GraphController graphControl;
-
+	private Rigidbody thisRigidbody;
     private Component sourceRb;
     private Component targetRb;
     private LineRenderer lineRenderer;
@@ -57,6 +57,7 @@ public class Link : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+		thisRigidbody = this.GetComponent<Rigidbody>();
 		//GlobalScalers Script = GetComponent<GlobalScalers>();
 		weightscale = 1f;
 		//weightscale = Script.weightScale;
@@ -117,8 +118,8 @@ public class Link : MonoBehaviour
 			lineRenderer.startWidth = 0.25f*weight/weightscale;
 			lineRenderer.endWidth = 0.25f*weight/weightscale;
             //lineRenderer.SetColors(Color.red, Color.cyan);
-            lineRenderer.startColor = Color.magenta;
-            lineRenderer.endColor = Color.magenta;
+            lineRenderer.startColor = Color.red;
+            lineRenderer.endColor = Color.red;
         }
 
         //lineRenderer.startWidth = 0.5f;

@@ -51,14 +51,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AttractiveForce.cs" />
+     <Compile Include="Assets\Scripts\ButtonColor.cs" />
      <Compile Include="Assets\Scripts\ButtonExample.cs" />
      <Compile Include="Assets\Scripts\ButtonLines.cs" />
      <Compile Include="Assets\Scripts\CameraControlZeroG.cs" />
      <Compile Include="Assets\Scripts\ColorSpheres.cs" />
      <Compile Include="Assets\Scripts\Control.cs" />
      <Compile Include="Assets\Scripts\Dijkstra.cs" />
+     <Compile Include="Assets\Scripts\DoRepulse.cs" />
      <Compile Include="Assets\Scripts\EigenvectorCentrality.cs" />
      <Compile Include="Assets\Scripts\FDG.cs" />
+     <Compile Include="Assets\Scripts\ForceSphere.cs" />
      <Compile Include="Assets\Scripts\ForceTest.cs" />
      <Compile Include="Assets\Scripts\GlobalScalers.cs" />
      <Compile Include="Assets\Scripts\InputFile.cs" />
@@ -73,11 +77,12 @@
      <Compile Include="Assets\Scripts\WCR.cs" />
      <Compile Include="Assets\Scripts\XmlSave.cs" />
      <None Include="Assets\Data\newFormat.xml.xml" />
+     <None Include="Assets\StreamingAssets\XML\VulpsFDG.xml" />
+     <None Include="Assets\Data\empty.xml" />
      <None Include="Assets\StreamingAssets\XML\save_data2.xml" />
      <None Include="Assets\LICENSE.txt" />
      <None Include="Assets\StreamingAssets\XML\save_vulps.xml" />
      <None Include="Assets\StreamingAssets\XML\save.xml" />
-     <None Include="Assets\Data\test.xml" />
      <None Include="Assets\Data\save_data123.xml.xml" />
      <None Include="Assets\StreamingAssets\XML\item_data2.xml" />
      <None Include="Assets\StreamingAssets\XML\save_data_test.xml" />

@@ -72,7 +72,7 @@ public class ButtonLines : MonoBehaviour
             clone.GetComponent<Link>().source = nodelist[num1];
             clone.GetComponent<Link>().target = nodelist[num2];
 			clone.GetComponent<Link>().direction = randomBoolean();
-			clone.GetComponent<Link>().weight = Random.Range(1, 5);
+			clone.GetComponent<Link>().weight = Random.Range(0.5f, 1);
 
          }
 

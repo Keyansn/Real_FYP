@@ -55,7 +55,7 @@ public class WCR : MonoBehaviour {
 
 
 						Dijkstra eScript = GameObject.FindGameObjectWithTag("GameController").GetComponent<Dijkstra>();
-						dist_ij = eScript.Calculate(nodelist[i], nodelist[j], false);
+						dist_ij = 5*eScript.Calculate(nodelist[i], nodelist[j], false);
 
 						if (debug) {print("dist_ij: " + dist_ij);}
 
