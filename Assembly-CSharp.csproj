@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\AttractiveForce.cs" />
+     <Compile Include="Assets\Scripts\AudioTest.cs" />
      <Compile Include="Assets\Scripts\ButtonColor.cs" />
      <Compile Include="Assets\Scripts\ButtonExample.cs" />
      <Compile Include="Assets\Scripts\ButtonLines.cs" />
@@ -83,6 +84,7 @@
      <None Include="Assets\LICENSE.txt" />
      <None Include="Assets\StreamingAssets\XML\save_vulps.xml" />
      <None Include="Assets\StreamingAssets\XML\save.xml" />
+     <None Include="Assets\StreamingAssets\XML\save_data123.xml.xml" />
      <None Include="Assets\Data\save_data123.xml.xml" />
      <None Include="Assets\StreamingAssets\XML\item_data2.xml" />
      <None Include="Assets\StreamingAssets\XML\save_data_test.xml" />

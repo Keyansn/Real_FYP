@@ -23,13 +23,14 @@ public class ColorSpheres : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+		AudioSource aud = GetComponent<AudioSource>();
         Rend = GetComponent<Renderer>();//Gives functionality for the renderer
         Rend.enabled = true;//Makes the rendered 3d object visable if enabled;
     }
 
     void OnMouseDown()
     {
-
+		AudioSource aud = GetComponent<AudioSource>();
         if (materials.Length == 0)//If there are no materials nothing happens.
             return;
 
@@ -53,6 +54,10 @@ public class ColorSpheres : MonoBehaviour {
 
         if (Input.GetMouseButtonDown(0))
         {
+			
+			//aud.loop = true;
+			aud.Play();
+
             index += 1;//When mouse is pressed down we increment up to the next index location
 
             if (index == materials.Length + 1)//When it reaches the end of the materials it starts over.
@@ -101,6 +106,12 @@ public class ColorSpheres : MonoBehaviour {
             nodeText.transform.LookAt(Camera.main.transform);
             nodeText.transform.Rotate(0,180F,0);
 
+			AudioSource aud = GetComponent<AudioSource>();
+			aud.pitch = aud.pitch + 0.001f;
+
+		if(aud.pitch > 1){
+			aud.pitch = 0.5f;
+		}
         
 
     }
